@@ -1,0 +1,108 @@
+
+
+@media (max-width: 1199.98px)
+  // Large devices (desktops, less than 1200px)
+  .membership-info-wrapper
+    padding: 0 20px
+  
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px)
+  .choose-your-membership-step
+    overflow-x: hidden
+
+  .membership-plan-wrapper.membership-two-options
+    flex-direction: column
+
+  .membership-plan-wrapper .membership-label,
+  .membership-plan-wrapper.membership-two-options .membership-label
+    width: 90%
+    margin: 30px 20px
+
+  //Fifth Step
+  .sign-up-form-wrapper
+    margin: 70px 20px
+    padding: 40px 20px
+  .review-order-step .sign-up-form-wrapper
+    padding: 40px 20px
+  .selected-plan .selected-plan__details-list
+    width: 300px
+    margin: 0 auto
+  .header .header-navigation-steps
+    display: none
+  .header .logo
+    margin: 0 auto
+    margin-bottom: 20px
+
+  .age-range-title
+    width: 230px
+
+  .main-section .sign-up-input-field
+    margin: 10px auto
+  .password-input-wrapper
+    margin: 10px auto
+
+  .membership-info-wrapper
+    padding: 0 20px
+    margin: 75px 10px
+    text-align: center
+  .select-plan-wrapper
+    margin: 75px 5px
+
+// Small devices (landscape phones, less than 647px)
+@media (max-width: 647.98px) 
+
+  .container
+    padding: 0 20px
+  .main-section .sign-up-input-field
+    width: 90%
+
+  .password-input-wrapper
+    width: 100%
+  .show-password-button
+    right: 35px
+
+  .membership-plan-wrapper .membership-plan__item .membership-value
+    margin-top: 40px
+    font-size: 38px
+    &::after
+      width: 100%
+      top: 40px
+      left: 10%
+  .membership-input:checked + label
+    transform: scale(1)
+  .membership-navigation
+    display: block
+  .choose-your-membership-step .membership-plan-wrapper .firstActivePlan 
+    transform: translateX(-111%)
+  .choose-your-membership-step .membership-plan-wrapper .thirdActivePlan 
+    transform: translateX(111%)
+  .membership-two-options .membership-input:checked + label .membership-plan__item
+    box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75)
+  .membership-plan-wrapper.membership-two-options
+    padding: 0
+    .membership-plan__item
+      padding-bottom: 31px
+    
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) 
+  .notification-step .checkbox-wrapper
+    margin: 0 auto
+  .notification-step .last-checkbox
+    width: 230px
+  .header
+    margin-bottom: 30px
+  .sign-up-form-wrapper
+    margin: 30px 10px
+  .checkbox-group-title
+    width: 100%
+    padding-left: 0
+    text-align: center
+  
+// Extra small devices (portrait phones, less than 400px)
+@media (max-width: 399.98px) 
+  .membership-plan-wrapper .membership-plan__item
+    padding: 20px 10px
+  .main-section h2
+    font-size: 26px
+  .selected-plan .selected-plan__details-list
+    width: 100%

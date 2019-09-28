@@ -1,0 +1,189 @@
+
+//Choose Membership
+.choose-your-membership-step
+  display: block
+
+.membership-plan-wrapper
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+  transition: all .2s ease-in-out .1s
+  input
+    visibility: hidden
+    position: absolute
+  .membership-label
+    width: 33%
+    margin: 140px 0 10px 0
+  .membership-plan__item
+    position: relative
+    padding: 30px 50px 16px
+    background-color: #fff
+    border-radius: 10px
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.11)
+    background-repeat: no-repeat
+    background-position: center bottom
+    background-size: 100%
+    cursor: pointer
+    h3
+      margin-bottom: 15px
+      font-size: 20px
+      text-transform: uppercase
+      text-align: center
+      color: $text-color
+    .membership-periods
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      .membership-period__item
+        input
+          visibility: hidden
+          position: absolute
+        label
+          color: $text-color
+          font-size: 17px
+          border-bottom: 1px solid #fff
+          cursor: grab
+        input:checked + label
+          color: $yellow
+          font-weight: bold
+          border-bottom: 1px solid $yellow
+    .membership-value
+      position: relative
+      font-family: 'Lato', sans-serif
+      color: #193560
+      font-size: 56px
+      text-align: center
+      font-weight: bold
+      text-transform: uppercase
+      &::after
+        display: block
+        position: absolute
+        bottom: 0
+        left: 50%
+        content: 'per month'
+        font-size: 17px
+        font-weight: normal
+        color: $text-color
+        text-align: center
+        text-transform: none
+    .membership-image
+      display: block
+      width: 100%
+      margin: 40px 0 10px 0
+    .membership-list
+      margin-top: 20px
+      padding-left: 20px
+      li
+        position: relative
+        color: $text-color
+        font-size: 17px
+        line-height: 33px
+        &::before
+          display: block
+          position: absolute
+          left: -15px 
+          top: 40%
+          content: ''
+          width: 6px
+          height: 6px
+          background-image: url('../img/ic-bullet.svg')
+          background-repeat: no-repeat
+          background-size: 100%
+    .membership-button
+      margin: 30px auto 15px
+    .membership-tip
+      font-size: 15px
+      color: #fff
+      text-align: center
+
+// Hide "per month" on basic membership
+.membership-plan-wrapper .basic-membership-section .membership-plan__item .membership-value::after
+  display: none
+// Different background image for membership plan
+.membership-plan-wrapper .premium-membership-section .membership-plan__item
+  background-image: url('../img/wave/wave-blue.svg')
+.membership-plan-wrapper .premium-plus-membership-section .membership-plan__item
+  background-image: url('../img/wave/wave-gold.svg')
+.membership-plan-wrapper .basic-membership-section .membership-plan__item
+  background-image: url('../img/wave/wave-lightblue.svg')
+
+//Selected membership
+.membership-plan-wrapper .membership-label
+  transition: all .3s ease-in-out .1s
+  z-index: 10
+.membership-input:checked + label
+  transform: scale(1.2)
+  z-index: 20
+
+.membership-input:checked + label  
+  .membership-plan__item 
+    position: relative
+    &::before
+      display: block
+      content: ''
+      position: absolute
+      top: -2px
+      left: 50%
+      transform: translateX(-50%)
+      width: 140px
+      height: 5px
+      background-color: $yellow
+      border-radius: 2px
+    .membership-button
+      background-color: $main-color
+      border: 1px solid #fff
+
+.discount
+  position: absolute
+  top: -30px
+  right: 30px
+  width: 70px
+  height: 70px
+  background-color: $main-color
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.27)
+  border-radius: 50%
+  text-align: center
+  color: #fff
+  z-index: 50
+  .discount__value
+    font-family: 'Lato', sans-serif
+    font-size: 25px
+    margin-top: 14px  
+  .discount__off
+    text-align: right
+    padding-right: 12px
+    line-height: .2
+    font-size: 11px
+    text-transform: uppercase
+    font-weight: 300
+
+.selected-plan
+  position: relative
+  &::before
+    display: block
+    content: ''
+    position: absolute
+    top: -40px
+    left: 50%
+    transform: translateX(-50%)
+    width: 140px
+    height: 2px
+    background-color: $yellow
+
+  // membership slider
+.membership-navigation
+  width: 120px
+  height: 30px
+  margin: 0 auto
+  .billing-method__checkbox
+    display: inline-block
+.membership-navigation
+  display: none
+
+  
+// Membership 2 options
+
+.membership-plan-wrapper.membership-two-options 
+  padding: 0 10%
+  .membership-label
+    width: 45% 

@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up Form</title>
+    <meta name="description" content="Some about your website">
+    <meta name="keywords" content="key-1, key-2">
+    <meta name="author" content="Oleksandr Sokolovskyi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<!--    Favicon-->
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+    
+<!--    Google font Nunito-->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700,900" rel="stylesheet"> 
+<!--    Google font Lato-->
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+
+<!-- Foundation -->    
+   <link rel="stylesheet" href="css/foundation.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vue-select/3.0.2/vue-select.css">
+<!--    Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    
+</head>
+<body>
+
+
+
+<!-- Main section -->
+
+<section class="main-section"  id="sign-up-app" v-cloak>
+
+  <!-- Header Section   -->   
+  <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="columns large-4 medium-12 small-12">
+            <a class="logo-link-wrapper" href="#">
+              <img src="img/logo.png" alt="Casting Frontier Logo" class="logo">
+            </a>
+          </div>
+          <div class="columns large-8 medium-12">
+            <div class="header-navigation-steps">
+              <!-- First Step -->
+              <figure class="step-item" @click="goToStep(1)" v-bind:class="{ active: currentStep == 1 }">
+                <img class="step-item__inactive-checkbox" src="img/check-icons/ic-inactive.svg" alt="Inactive chekcbox" v-if="currentStep < 1">
+                <img class="step-item__done-checkbox" src="img/check-icons/ic-done.svg" alt="Is Done checkbox" v-if="currentStep == 1">
+                <img class="step-item__active-checkbox" src="img/check-icons/ic-active.svg" alt="Active Checkbox" v-if="currentStep > 1">
+                <figcaption>Choose Membership</figcaption>
+              </figure>
+              <!-- Second Step -->
+              <figure class="step-item" @click="goToStep(2)" v-bind:class="{ active: currentStep == 2 }">
+                <img class="step-item__inactive-checkbox" src="img/check-icons/ic-inactive.svg" alt="Inactive chekcbox" v-if="currentStep < 2">
+                <img class="step-item__done-checkbox" src="img/check-icons/ic-done.svg" alt="Is Done checkbox" v-if="currentStep == 2">
+                <img class="step-item__active-checkbox" src="img/check-icons/ic-active.svg" alt="Active Checkbox" v-if="currentStep > 2">
+                <figcaption>Create Account</figcaption>
+              </figure>
+              <!-- Third Step -->
+              <figure class="step-item" @click="goToStep(3)" v-bind:class="{ active: currentStep == 3 }">
+                <img class="step-item__inactive-checkbox" src="img/check-icons/ic-inactive.svg" alt="Inactive chekcbox" v-if="currentStep < 3">
+                <img class="step-item__done-checkbox" src="img/check-icons/ic-done.svg" alt="Is Done checkbox" v-if="currentStep == 3">
+                <img class="step-item__active-checkbox" src="img/check-icons/ic-active.svg" alt="Active Checkbox" v-if="currentStep > 3">
+                <figcaption>Enter Details</figcaption>
+              </figure>
+              <!-- Fourth Step -->
+              <figure class="step-item" @click="goToStep(4)" v-bind:class="{ active: currentStep == 4 }">
+                <img class="step-item__inactive-checkbox" src="img/check-icons/ic-inactive.svg" alt="Inactive chekcbox" v-if="currentStep < 4">
+                <img class="step-item__done-checkbox" src="img/check-icons/ic-done.svg" alt="Is Done checkbox" v-if="currentStep == 4">
+                <img class="step-item__active-checkbox" src="img/check-icons/ic-active.svg" alt="Active Checkbox" v-if="currentStep > 4">
+                <figcaption>Notifications </figcaption>
+              </figure>
+              <!-- Fifth Step -->
+              <figure class="step-item" @click="goToStep(5)" v-bind:class="{ active: currentStep == 5 }">
+                <img class="step-item__inactive-checkbox" src="img/check-icons/ic-inactive.svg" alt="Inactive chekcbox" v-if="currentStep < 5">
+                <img class="step-item__done-checkbox" src="img/check-icons/ic-done.svg" alt="Is Done checkbox" v-if="currentStep == 5">
+                <img class="step-item__active-checkbox" src="img/check-icons/ic-active.svg" alt="Active Checkbox" v-if="currentStep > 5">
+                <figcaption>Review Orders</figcaption>
+              </figure>
+            </div>  
+          </div>
+        </div>
+      </div>  
+    </header>
+
+<!-- Choose Your Membership [Step 1]  -->
+  <transition name="fade">
+  <div class="choose-your-membership-step" v-if="currentStep == 1 ">
+    <div class="container">
+      <div class="step-section first-step-section">
+        <h2>Choose your membership</h2>
+        <p class="step-section__hint">*73% of our members choose "Premium Plus"</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="membership-plan-wrapper" >
+        
+  <!-- Membership Plan Item Premium-->
+
+        <input type="radio" class="membership-input" id="premium-membership" name="membership" value="1" v-model="membershipPlan">
+        <label class="membership-label premium-membership-section" for="premium-membership" v-bind:class="{ firstActivePlan: membershipNavigation == 2, thirdActivePlan: membershipNavigation == 0 }">
+          <div class="membership-plan__item">
+            <h3>Premium</h3>
+  <!-- Membership periods -->
+            <div class="membership-periods">
+              <div class="membership-period__item">
+                <input type="radio" value="$14.99" id="premium-monthly" name='premium' v-model="premiumMonthly">
+                <label for="premium-monthly">Monthly</label>
+              </div>
+              <div class="membership-period__item">
+                  <input type="radio" value="$8.33" id="premium-6-month" name='premium' v-model="premiumMonthly">
+                  <label for="premium-6-month">6 Month</label>
+              </div>
+              <div class="membership-period__item">
+                <input type="radio" value="$6.33" id="premium-annually" name='premium' v-model="premiumMonthly">
+                <label for="premium-annually">1 year</label>
+              </div>
+              <div class="membership-period__item">
+                <input type="radio" value="$4.16" id="premium-2-year" name='premium' v-model="premiumMonthly">
+                <label for="premium-2-year">2 year</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="columns large-12 medium-12 small-6">
+<!-- Membership Value -->
+                <div class="membership-value">{{premiumMonthly}}</div>
+              </div>
+              <div class="columns large-12 medium-12 small-6">
+<!-- Membership Image -->
+                <img class="membership-image" src="img/graphics/Web/SVG/graphic-illustration-premium.svg" alt="Premium Membership"> 
+              </div>
+            </div>
+  
+  
+  <!-- Membership List -->
+            <ul class="membership-list">
+              <li>5 Headshots</li>
+              <li>5 Video Action Clips</li>
+              <li>Unlimited Headshot Changes</li>
+              <li>Unlimited Role Submissions</li>
+              <li>One Link to a Website</li>
+              <li>One Voice Reel</li>
+              <li>Online Resume</li>
+            </ul>
+  <!-- Membership Continue Button -->
+            <button class="membership-button continue-button" @click="goToStep(2)">Continue</button>
+  <!-- Membership Tips -->
+            <p class="membership-tip" v-if="premiumMonthly != '$14.99'"><span class="bold-font uppercase-font">Billed annually:</span><span>&#8195;</span>
+              <span v-if="premiumMonthly == '$8.33'">$49.99</span>
+              <span v-if="premiumMonthly == '$6.33'">$75.99</span>
+              <span v-if="premiumMonthly == '$4.16'">$99.99</span>
+            </p>
+            <div class="discount" v-if="premiumMonthly != '$14.99'">
+              <p class="discount__value">
+                <span v-if="premiumMonthly == '$8.33'">45%</span>
+                <span v-if="premiumMonthly == '$6.33'">58%</span>
+                <span v-if="premiumMonthly == '$4.16'">72%</span>
+              </p>
+              <p class="discount__off">off</p>
+            </div>
+          </div>
+        </label>
+          
+  <!-- Membership Plan Item  Premium Plus-->
+        <input type="radio" class="membership-input" id="premium-plus-membership" name="membership" value="2" v-model="membershipPlan" checked>
+        <label class="membership-label premium-plus-membership-section" for="premium-plus-membership" v-bind:class="{ firstActivePlan: membershipNavigation == 2, thirdActivePlan: membershipNavigation == 0 }">
+          <div class="membership-plan__item">
+            <h3>Premium Plus</h3>
+  <!-- Membership periods -->
+            <div class="membership-periods">
+              <div class="membership-period__item">
+                <input type="radio" value="$19.99" id="premium-plus-monthly" name='premiumPlus' v-model="premiumPlusMonthly">
+                <label for="premium-plus-monthly">Monthly</label>
+              </div>
+              <div class="membership-period__item">
+                  <input type="radio" value="$9.99" id="premium-plus-6-month" name='premiumPlus' v-model="premiumPlusMonthly">
+                  <label for="premium-plus-6-month">6 Month</label>
+              </div>
+              <div class="membership-period__item">
+                <input type="radio" value="$7.99" id="premium-plus-annually" name='premiumPlus' v-model="premiumPlusMonthly">
+                <label for="premium-plus-annually">1 year</label>
+              </div>
+              <div class="membership-period__item">
+                <input type="radio" value="$5.83" id="premium-plus-2-year" name='premiumPlus' v-model="premiumPlusMonthly">
+                <label for="premium-plus-2-year">2 year</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="columns large-12 medium-12 small-6">
+ <!-- Membership Value -->
+                <div class="membership-value">{{premiumPlusMonthly}}</div>
+                <span></span>
+              </div>
+              <div class="columns large-12 medium-12 small-6">
+<!-- Membership Image -->
+                <img class="membership-image" src="img/graphics/Web/SVG/graphic-illustration-premiumplus.svg" alt="Premium Plus Membership"> 
+                </div>
+            </div>
+ 
+ 
+  <!-- Membership List -->
+            <ul class="membership-list">
+              <li>Unlimited Headshots</li>
+              <li>Unlimited Video Action Clips</li>
+              <li>One Featured Video Reel</li>
+              <li>Unlimited Headshot Changes</li>
+              <li>Unlimited Role Submissions</li>
+              <li>One Link to a Website</li>
+              <li>One Voice Reel</li>
+              <li>Online Resume</li>
+            </ul>
+  <!-- Membership Continue Button -->
+            <button class="membership-button continue-button" @click="goToStep(2)" >Continue</button>
+  <!-- Membership Tips -->
+            <p v-if="premiumPlusMonthly != '$19.99'" class="membership-tip"><span class="bold-font uppercase-font">Billed annually: </span><span>&#32;</span>
+              <span v-if="premiumPlusMonthly == '$9.99'">$59.99</span>
+              <span v-if="premiumPlusMonthly == '$7.99'">$95.99</span>
+              <span v-if="premiumPlusMonthly == '$5.83'">$139.99</span>
+            </p>
+            <div class="discount" v-if="premiumPlusMonthly != '$19.99'">
+              <p class="discount__value">
+                <span v-if="premiumPlusMonthly == '$9.99'">50%</span>
+                <span v-if="premiumPlusMonthly == '$7.99'">60%</span>
+                <span v-if="premiumPlusMonthly == '$5.83'">71%</span>
+              </p>
+              <p class="discount__off">off</p>
+            </div>
+          </div>
+        </label>
+  
+  <!-- Membership Plan Item  Basic-->
+        <input type="radio" class="membership-input" id="basic-membership" name="membership" value="0" v-model="membershipPlan">
+        <label class="membership-label basic-membership-section" for="basic-membership" v-bind:class="{ firstActivePlan: membershipNavigation == 2, thirdActivePlan: membershipNavigation == 0 }">
+          <div class="membership-plan__item">
+            <h3>Basic</h3>
+            <div style="height: 30px"></div>
+
+            <div class="row">
+                <div class="columns large-12 medium-12 small-6">
+  
+                </div>
+                <div class="columns large-12 medium-12 small-6">
+                  
+                  </div>
+              </div>
+
+  <!-- Membership Value -->
+            <div class="membership-value">Free</div>
+            <!-- Membership Image -->
+            <img class="membership-image" src="img/graphics/Web/SVG/graphic-illustration-basic.svg" alt="Basic Membership"> 
+  <!-- Membership List -->
+            <ul class="membership-list">
+              <li>1 Headshot</li>
+              <li>Limited Direct Submission</li>
+              <li>Online Resume</li>
+            </ul>
+            <div style="height: 150px"></div>
+  <!-- Membership Continue Button -->
+            <button class="membership-button continue-button" @click="goToStep(2)">Continue</button>
+            </div>
+        </label> 
+
+      </div>
+    </div>
+    <div class="container">
+      <div class="membership-navigation">
+        <label class="billing-method__checkbox" for="memebership-navigation__input-1">
+          <input type="radio" id="memebership-navigation__input-1" name="memebership-navigation" value="0" v-model="membershipNavigation">
+          <span class="checkmark"></span>
+        </label>
+        <label class="billing-method__checkbox" for="memebership-navigation__input-2">
+          <input type="radio" id="memebership-navigation__input-2" name="memebership-navigation" value="1" v-model="membershipNavigation">
+          <span class="checkmark"></span>
+        </label>
+        <label class="billing-method__checkbox" for="memebership-navigation__input-3">
+          <input type="radio" id="memebership-navigation__input-3" name="memebership-navigation" value="2" v-model="membershipNavigation">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+  </transition>
+
+<!-- Create Account [Step 2]   -->
+<transition name="fade">
+  <div class="create-account-step" v-if="currentStep == 2 ">
+    <div class="container">
+      <div class="step-section">
+        <h2>Create Account</h2>
+      </div>
+    </div>
+    <div class="container">
+      <div class="sign-up-form-wrapper">
+        <div class="row">
+          <div class="columns medium-12 large-6 small-12">
+            <input class="sign-up-input-field" type="text" placeholder="First Name">
+            
+          </div>
+          <div class="columns medium-12 large-6 small-12">
+            <input class="sign-up-input-field" type="text" placeholder="Last Name">
+          </div>
+        </div>
+        <div class="row">
+          <div class="columns medium-12 large-6 small-12">
+            <input class="sign-up-input-field" type="text" placeholder="Username">
+          </div>
+          <div class="columns medium-12 large-6 small-12">
+            <input class="sign-up-input-field" type="email" placeholder="E-mail address">
+          </div>
+        </div>
+
+        <div id="password">
+          <div class="row" >
+              <div class="columns medium-12 large-6 small-12">
+                <div class="password-input-wrapper">
+                  <input class="sign-up-input-field" type="password" placeholder="Password" v-model="password" v-show="!showPass">
+                  <input class="sign-up-input-field" type="text" placeholder="Password" v-model="password" v-show="showPass">
+                  <button class="show-password-button" @click="showPass = !showPass"><img class="show-password-icon" src="" alt=""></button>
+                </div>
+              </div>
+              <div class="columns medium-12 large-6 small-12">
+                <div class="password-input-wrapper">
+                    <input class="sign-up-input-field" type="password" placeholder="Password" v-model="confirmPassword" v-show="!showConfirmPass">
+                    <input class="sign-up-input-field" type="text" placeholder="Password" v-model="confirmPassword" v-show="showConfirmPass">
+                    <button class="show-password-button" @click="showConfirmPass = !showConfirmPass"><img class="show-password-icon" src="" alt=""></button>
+                  </div>
+              </div>
+            </div>
+        </div>
+
+        
+
+        <div class="row">
+          <div class="columns medium-12 large-6 small-12">
+            <input class="sign-up-input-field" type="phone" placeholder="Phone Number">
+          </div>
+        </div>
+        <div class="row">
+          <button class="continue-button continue-button--blue" @click="goToStep(3)">Continue</button>
+        </div>
+      </div> 
+    </div> 
+  </div>
+</transition>
+<!-- Enter Details [Step 3]  -->
+<transition name="fade">
+<div class="enter-details-step" v-if="currentStep == 3 ">
+  <div class="container">
+    <div class="step-section">
+      <h2>Enter your details below to receive matching roles immediately!</h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="sign-up-form-wrapper">
+
+      <div class="row">
+        <div class="columns large-6 medium-6 small-12">
+          <div class="vue-input-select" id="select-region">
+            <v-select :options="regions" placeholder="Choose Region"></v-select>
+          </div>
+        </div>
+        <div class="columns large-6 medium-6 small-12">
+          <div class="vue-input-select" id="select-gender">
+            <v-select :options="gender" placeholder="Gender"></v-select>
+          </div>
+          <label class="checkbox-wrapper">
+            <input type="checkbox">
+            <span class="checkmark"></span><span>Transgender</span>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="columns large-6 medium-6 small-12">
+          <div class="age-range-title">Portrayable Age Range</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="columns large-6 medium-6 small-12">
+          <div class="vue-input-select" id="age-range-from">
+            <v-select :options="ageRangeFrom" placeholder="From"></v-select>
+          </div>
+        </div>
+        <div class="columns large-6 medium-6 small-12">
+          <div class="vue-input-select" id="age-range-to">
+            <v-select :options="ageRangeTo" placeholder="To"></v-select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="checkbox-group-title">Portrayable Ethnicites (choose all that apply)</div> 
+      </div>
+
+      <div class="row checkbox-group-wrapper">
+        <div class="columns large-4 medium-6 small-12">
+          <label class="checkbox-wrapper">
+            <input type="checkbox">
+            <span class="checkmark"></span><span>African American</span>
+          </label>
+          <label class="checkbox-wrapper">
+            <input type="checkbox">
+            <span class="checkmark"></span><span>Middle Eastern</span>
+          </label>
+          <label class="checkbox-wrapper">
+            <input type="checkbox">
+            <span class="checkmark"></span><span>Pacific Islander</span>
+          </label>
+          <label class="checkbox-wrapper">
+            <input type="checkbox">
+            <span class="checkmark"></span><span>East Indian</span>
+          </label>
+        </div>
+        <div class="columns large-8 medium-6 small-12">
+          <div class="row">
+            <div class="columns large-6 medium-12 small-12">
+              <label class="checkbox-wrapper">
+                <input type="checkbox">
+                <span class="checkmark"></span><span>Asian</span>
+              </label>
+              <label class="checkbox-wrapper">
+                <input type="checkbox">
+                <span class="checkmark"></span><span>Hispanic</span>
+              </label>
+              <label class="checkbox-wrapper">
+                <input type="checkbox">
+                <span class="checkmark"></span><span>Ambiguous</span>
+              </label>
+            </div>
+            <div class="columns large-6 medium-12 small-12">
+              <label class="checkbox-wrapper">
+                <input type="checkbox">
+                <span class="checkmark"></span><span>Caucasian</span>
+              </label>
+              <label class="checkbox-wrapper">
+                <input type="checkbox">
+                <span class="checkmark"></span><span>Multi-Ethnic</span>
+              </label>
+              <label class="checkbox-wrapper">
+                <input type="checkbox">
+                <span class="checkmark"></span><span>Native American</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <button class="continue-button continue-button--blue" @click="goToStep(4)">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+</transition>
+<!-- Notification [Step 4] -->
+<transition name="fade">
+<div class="notification-step" v-if="currentStep == 4 ">
+  <div class="container">
+    <div class="step-section">
+      <h2>Job & Notification Options</h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="sign-up-form-wrapper">
+      <div class="row">
+
+        <div class="columns large-4 medium-6 small-12">
+          <label class="checkbox-wrapper">
+            <input type="checkbox">
+            <span class="checkmark"></span><span>Paying jobs</span>
+          </label>
+          <label class="checkbox-wrapper">
+            <input type="checkbox">
+            <span class="checkmark"></span><span>Newsletters</span>
+          </label>
+        </div>
+
+        <div class="columns large-4 medium-6 small-12">
+          <label class="checkbox-wrapper">
+            <input type="checkbox">
+            <span class="checkmark"></span><span>Union jobs</span>
+          </label>
+          <label class="checkbox-wrapper">
+            <input type="checkbox">
+            <span class="checkmark"></span><span>Upcoming sales</span>
+          </label>
+        </div>
+
+        <div class="columns large-4 medium-12 small-12">
+          <div class="row">
+            <div class="columns large-12 medium-6 small-12">
+              <label class="checkbox-wrapper">
+                <input type="checkbox">
+                <span class="checkmark"></span><span>Non-Union jobs</span>
+              </label>
+            </div>
+            <div class="columns large-12 medium-6 small-12">
+              <label class="checkbox-wrapper fix-label-position">
+                <input type="checkbox">
+                <span class="checkmark"></span><span>Non-paying jobs</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns large-12 medium-12 small-12">
+          <label class="checkbox-wrapper last-checkbox">
+            <input type="checkbox">
+            <span class="checkmark"></span><span>Agent finder - I would like to be contacted by agents who may want to represent me.</span>
+          </label>
+        </div>
+
+      </div>
+      <div class="row">
+        <button class="continue-button continue-button--blue" @click="goToStep(5)">Continue</button>
+      </div>
+      
+    </div>
+    
+  </div>
+</div>
+</transition>
+<!-- Review Order [Step 5] -->
+<transition name="fade">
+<div class="review-order-step" v-if="currentStep == 5 ">
+</transition>
+  <div class="container">
+    <div class="step-section">
+      <h2>Review Order</h2>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="sign-up-form-wrapper">
+      <div class="row">
+        <div class="columns large-6 medium-12 small-12">
+<!-- Premium Plus Membership -->
+          <div class="selected-plan selected-premium-plus" v-if="membershipPlan == '2' ">
+            <div class="selected-plan__title">PREMIUM PLUS</div> 
+            <div class="selected-plan__rate">$19.99 USD per month</div>
+            <ul class="selected-plan__details-list">
+              <li>Unlimited Headshots</li>
+              <li>Unlimited Video Action Clips</li>
+              <li>One Featured Video Reel</li>
+              <li>Unlimited Headshot Changes</li>
+              <li>Unlimited Role Submissions</li>
+              <li>One Link to a Website</li>
+              <li>One Voice Reel</li>
+              <li>Online Resume</li>
+              </ul>
+          </div>
+<!-- Premium Membership -->
+        <div class="selected-plan selected-premium" v-if="membershipPlan == '1' ">
+          <div class="selected-plan__title">PREMIUM</div> 
+          <div class="selected-plan__rate">$14.99 USD per month</div>
+          <ul class="selected-plan__details-list">
+            <li>5 Headshots</li>
+            <li>5 Video Action Clips</li>
+            <li>Unlimited Headshot Changes</li>
+            <li>Unlimited Role Submissions</li>
+            <li>One Link to a Website</li>
+            <li>One Voice Reel</li>
+            <li>Online Resume</li>
+          </ul>
+        </div>
+<!-- Basic Membership -->
+        <div class="selected-plan selected-basic" v-if="membershipPlan == '0' ">
+          <div class="selected-plan__title">BASIC</div> 
+          <div class="selected-plan__rate">FREE</div>
+          <ul class="selected-plan__details-list">
+            <li>1 Headshots</li>
+            <li>Limited Direct Submission</li>
+            <li>Online Resume</li>
+          </ul>
+        </div>
+
+        </div>
+        <div class="columns large-6 medium-12 small-12">
+
+          <div class="billing-details row">
+            <div class="columns large-12 medium-6 small-12">
+              <div class="input-title">Billing E-mail Address</div>
+              <input class="sign-up-input-field" type="email" placeholder="E-mail Address">
+            </div>
+            <div class="columns large-12 medium-6 small-12">
+              <div class="input-title">Promo Code</div>
+              <input class="sign-up-input-field" type="text" placeholder="Enter Code">
+            </div>
+            
+          </div>
+
+          <div class="choose-billing-method" id="choose-billing-method">
+            <div class="input-title">Choose your paying method</div>
+            <label class="billing-method__checkbox" for="credit-card-method">
+              <input type="radio" id="credit-card-method" name="billing-method" value="0" v-model="billing">
+              <span class="checkmark"></span><span>Credit or Debit Card</span><span><img class="credit-card-icon" src="img/payment/ic-creditcard.svg" alt="Credit Card"></span>
+            </label>
+          <transition name="fade">
+            <div class="credit-card-method-group row" v-if="billing == '0' " >
+              <div class="columns large-12 medium-12 small-12">
+                <div class="row">
+                  <div class="columns large-12 medium-6 small-12">
+                    <input class="sign-up-input-field" type="text" placeholder="Card Number"/>
+                  </div>
+                  <div class="columns large-12 medium-6 small-12">
+                    <input class="sign-up-input-field" type="date" placeholder="Expiration Date MM/YY"/>
+                  </div>
+                </div>
+              </div>
+              <div class="columns large-12 medium-12 small-12">
+                <div class="row">
+                  <div class="columns large-12 medium-6 small-12">
+                    <input class="sign-up-input-field" type="text" placeholder="CCV"/>
+                  </div>
+                  <div class="columns large-12 medium-6 small-12">
+                    <input class="sign-up-input-field" type="text" placeholder="Postal Code"/>
+                  </div>
+                </div>
+              </div> 
+            </div>
+          </transition>
+
+            <label class="billing-method__checkbox" for="paypal-method">
+              <input type="radio" name="billing-method" id="paypal-method" value="1" v-model="billing">
+              <span class="checkmark"></span><span>Payment via PayPal</span><span><img class="credit-card-icon" src="img/payment/ic-paypal.svg" alt="PayPal"></span>
+            </label>
+          </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <button class="continue-button continue-button--blue" @click="goToStep(6)">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+<!-- Footer Section -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="grid-x">
+        <div class="cell">
+          <p>Copyright 2019, The Casting Frontier. All Rights Reserved. Terms of Use and Privacy Policy.</p>
+          <p>All trademarks property of their respective holders. Use of our software during the casting process does not imply endorsement. </p>
+        </div>
+      </div>
+    </div> 
+    <h1></h1>
+  </footer>
+   
+<!-- Vue js -->
+<script src="js/vue.min.js"></script>
+  
+  <!-- use the latest release -->
+<script src="https://unpkg.com/vue-select@latest"></script>
+
+<!-- Key Script  -->
+  <script src="js/common.js"></script>
+</body>
+</html>

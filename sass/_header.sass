@@ -1,0 +1,42 @@
+//  HEADER Styles
+
+.header
+  margin-top: 30px
+  margin-bottom: 70px
+  background-color: #fff
+  .logo
+      display: block
+      width: 220px
+      height: 40px
+      margin-top: 10px
+  .header-navigation-steps
+      display: flex
+      flex-direction: row
+      justify-content: space-around
+  .step-item
+    cursor: pointer
+    img 
+        display: block
+        margin: 0 auto
+    figcaption
+        margin-top: 14px
+        font-size: 15px
+        line-height: 20px
+        color: $text-color
+        text-align: center
+        margin-bottom: 20px
+    .step-item__done-checkbox
+      display: block     
+    .step-item__inactive-checkbox
+      display: block 
+    .step-item__active-checkbox
+      display: block
+  .step-item.active
+    border-bottom: 5px solid $yellow
+    border-radius: 2px
+    figcaption
+      color: $yellow
+    .step-item__done-checkbox
+      display: block
+    .step-item__inactive-checkbox
+      display: none

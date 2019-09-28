@@ -1,0 +1,337 @@
+@import 'reset'
+@import 'variables'
+
+/* Main CSS */
+body
+  position: relative
+  padding: 0
+  margin: 0
+  font-family: 'Nunito', sans-serif
+  font-size: 16px
+  line-height: 1.6
+  box-sizing: border-box
+header,
+section,
+footer
+  max-width: 100%
+  margin: 0 auto
+.container
+  max-width: 1280px
+  margin: 0 auto
+  padding: 0 85px
+.bold-font
+  font-weight: bold
+.uppercase-font
+  text-transform: uppercase
+.italic-font
+  font-style: italic
+  
+// Vue Cloak	
+
+[v-cloak] 
+	display: none
+[v-cloak]::before 
+  content: ''
+  position: absolute
+  left: 50%
+  top: 50%
+  z-index: 1
+  width: 150px
+  height: 150px
+  margin: -75px 0 0 -75px
+  border: 16px solid #f3f3f3
+  border-radius: 50%
+  border-top: 16px solid #3498db
+  width: 120px
+  height: 120px
+
+.continue-button
+  display: block
+  margin: 0 auto
+  width: 246px
+  height: 50px
+  border-radius: 31px
+  background-color: $text-color
+  font-size: 19px
+  text-align: center
+  color: #fff
+  font-weight: bold
+  text-transform: uppercase
+  cursor: pointer
+  transition: all .2s ease-in-out .1s
+  &::active
+    border-bottom: 2px solid #fff
+  &:hover
+    transform: scale(1.05)
+
+.continue-button--blue
+  background-color: $main-color
+
+.sign-up-form-wrapper
+  margin: 75px 100px
+  padding: 70px
+  border-radius: 10px
+  background-color: #fff
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.11)
+  background-image: url('../img/wave/wave-lightblue.png')
+  background-repeat: no-repeat
+  background-position: bottom
+  background-size: 100% 170px
+
+.main-section 
+  padding-bottom: 60px
+  .sign-up-input-field
+    display: block
+    margin: 0 auto 40px
+    width: 230px
+    padding: 4px 0
+    outline: none
+    border-top: none
+    border-left: none
+    border-right: none
+    border-bottom: 1px solid #8D97A6
+    background-color: transparent
+    box-shadow: none
+    font-size: 20px
+    color: $text-color
+    line-height: 35px
+    text-indent: 1px
+    transition: all .1s ease-in-out .1s
+    &:focus
+      background-color: transparent
+      border-bottom: 3px solid $yellow
+      padding-bottom: 2px
+    &:focus::-webkit-input-placeholder 
+      font-weight: bold
+    &:focus:-moz-placeholder 
+      font-weight: bold
+  .vue-input-select
+    display: block
+    margin: 0 auto 18px
+    width: 230px
+    padding: 4px 0
+    outline: none
+    border-top: none
+    border-left: none
+    border-right: none
+    border-bottom: 1px solid #8D97A6
+    background-color: transparent
+    box-shadow: none
+    font-size: 20px
+    color: $text-color
+    line-height: 35px
+    text-indent: 1px
+    transition: all .1s ease-in-out .1s
+
+.vue-input-select .v-select .dropdown-toggle 
+  border: none
+
+.vue-input-select .v-select input[type=search], .vue-input-select .v-select input[type=search]:focus
+  padding-left: 0
+  
+
+// Custom Checkboxes
+.checkbox-wrapper
+  position: relative
+  display: block
+  width: 230px
+  margin: 0 auto
+  padding-left: 28px
+  font-size: 20px
+  color: $text-color
+  cursor: pointer
+  input
+    position: absolute
+    opacity: 0
+  .checkmark
+    position: absolute
+    top: 4px
+    left: 0
+    width: 18px
+    height: 18px
+    background-image: url('../img/check-icons/ic-checkbox-inactive.svg')  
+    background-repeat: no-repeat
+    background-size: 100%
+.checkbox-wrapper input:checked ~ .checkmark
+    background-image: url('../img/check-icons/ic-checkbox-active.svg')
+
+// Main Section  
+
+.main-section
+  background-color: #EFF2F6
+  h2
+    font-size: 30px
+    color: #193560
+    text-align: center
+    font-weight: bold
+  .step-section__hint
+    font-size: 17px
+    line-height: 23px
+    color: $text-color
+    text-align: center
+
+
+.notification-step .last-checkbox
+  width: auto
+  margin: auto
+
+//21 Aug 2019 Updates
+  
+.premium-plus-img-svg
+  display: block
+  width: 300px
+  margin: 20px auto  
+.membership-info-wrapper
+  margin: 75px 100px
+  padding: 0 95px 20px
+  background-color: #fff
+  border-radius: 10px
+.membership-benefits-list
+  font-size: 20px
+  color: #8D97A6
+  li
+    position: relative
+    padding: 10px 12px
+    text-align: left
+    &::after
+      content: ''
+      display: block
+      position: absolute
+      width: 23px
+      height: 23px
+      left: -25px
+      top: 12px
+      background-image: url('../img/active-3.png')
+      background-size: contain
+      background-repeat: no-repeat
+  
+.select-plan-wrapper
+  margin: 75px 86px
+  .select-plan
+    visibility: hidden
+  .select-plan:checked + label .plan-wrapper
+    border: 2px solid $yellow
+    background-image: url('../img/wave-gold.svg')
+    box-shadow: 0 4px 30px 0 rgba(43, 89, 161, 0.3)
+    .discount
+      background-color: #f9af47
+      transform: scale(1.1)
+    .select-plan-btn
+      background-color: #2e5b9f
+.plan-wrapper
+  margin: 0 0 20px 0
+  padding: 24px 0 5px 0
+  position: relative
+  width: 100%
+  text-align: center
+  background-color: #fff
+  border-radius: 10px
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.11)
+  cursor: pointer
+  transition: all .2s ease-in-out .2s
+  background-image: url('../img/wave-blue.svg')
+  background-size: 101%
+  background-position: 0 100%
+  background-repeat: no-repeat
+  &:hover
+    background-image: url('../img/wave-gold.svg')
+    box-shadow: 0 4px 30px 0 rgba(43, 89, 161, 0.3)
+  .best-value
+    position: absolute
+    width: 90px
+    border-bottom: 2px solid #fbb03a
+    top: -25px
+    right: 50%
+    transform: translateX(50%)
+    font-size: 14px
+    color: #fbb03a
+    text-transform: uppercase
+    font-weight: bold
+  .period
+    color: #8D97A6
+    font-size: 14px
+    text-decoration: underline
+  .mebership-headline
+    font-size: 16px
+    font-weight: bold
+    color: #8d97a6
+    text-transform: uppercase
+  .highlight-period
+    color: #f9af47
+    text-decoration: underline
+    font-weight: bold
+    margin: 5px 0 10px
+  .period-price
+    color: #193560
+    font-size: 34px
+    font-weight: bold
+    font-family: Lato
+    .large-font-size
+      font-size: 30px
+    .small-font-size
+      vertical-align: super
+      font-size: 20px
+    .per-month
+      font-size: 12px
+  .period-price_per-month
+    font-size: 14px
+    color: #8d97a6
+    text-align: center
+    padding-left: 40px
+    margin-bottom: 40px
+  .select-plan-btn
+    font-size: 14px
+    width: 150px
+    padding: 5px 0
+    margin: 10px auto 5px
+    border-radius: 30px
+    color: #ffffff
+    text-transform: uppercase
+    background-color: #5d7292
+  .select-plan-btn__grey
+    
+  .select-plan-btn__blue
+    
+  .plan-wrapper__footer
+    font-size: 9px
+    color: #ffffff
+  .discount
+    width: 40px
+    height: 40px
+    top: -23px
+    right: 7px
+    z-index: 20
+    .discount__value
+      margin-top: 8px
+      font-size: 12px
+    .discount__off
+      font-size: 7px
+
+.best-value-mark
+  height: 50px
+  width: 50px
+  position: absolute
+  top: -25px
+  left: -25px
+
+
+// 11 Sep 2019
+
+.plan-rate 
+  color: #fbb03a
+  text-align: center
+.billing-method__checkbox
+  margin-bottom: 30px
+.select-plan-wrapper
+  margin: 0
+
+
+
+@import 'header'
+@import 'choose-membership'  
+@import 'create-account'
+@import 'enter-details'
+@import 'notification'
+@import 'review-order'
+@import 'footer'
+@import 'media'

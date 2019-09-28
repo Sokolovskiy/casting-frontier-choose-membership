@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Check / Active</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Choose-Membership-V7-Anually-Select" transform="translate(-473.000000, -44.000000)" fill="#8D97A6" fill-rule="nonzero">
+            <g id="Navigation-Bar">
+                <g id="Navbar" transform="translate(406.000000, 44.000000)">
+                    <g id="Group-21">
+                        <g id="Group-19">
+                            <g id="Check-/-Inactive" transform="translate(67.000000, 0.000000)">
+                                <path d="M8,3.55271368e-16 C10.1217319,1.77635684e-16 12.1565632,0.842854723 13.6568542,2.34314575 C15.1571453,3.84343678 16,5.87826808 16,8 C16,12.418278 12.418278,16 8,16 C5.87826808,16 3.84343678,15.1571453 2.34314575,13.6568542 C0.842854723,12.1565632 1.77635684e-16,10.1217319 0,8 C-1.0658141e-15,5.87826808 0.842854723,3.84343678 2.34314575,2.34314575 C3.84343678,0.842854723 5.87826808,3.55271368e-16 8,0 L8,3.55271368e-16 Z M8,1.6 C4.4653776,1.6 1.6,4.4653776 1.6,8 C1.6,11.5346224 4.4653776,14.4 8,14.4 C9.69738553,14.4 11.3252506,13.7257162 12.5254834,12.5254834 C13.7257162,11.3252506 14.4,9.69738553 14.4,8 C14.4,4.4653776 11.5346224,1.6 8,1.6 L8,1.6 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

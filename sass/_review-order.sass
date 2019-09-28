@@ -1,0 +1,100 @@
+//Review Order Styles
+.review-order-step
+  display: block
+  .sign-up-form-wrapper
+    padding: 40px 80px
+  .continue-button
+    margin-top: 70px
+.selected-plan.selected-basic
+  color: $yellow
+.selected-plan
+  .selected-plan__title
+    color: $text-color
+    font-weight: bold
+    font-size: 20px
+    line-height: 27px
+    text-align: center
+  .selected-plan__rate
+    margin: 18px 0 35px
+    font-size: 20px
+    line-height: 27px
+    color: $yellow
+    text-align: center
+    font-weight: bold
+  .selected-plan__details-list
+    position: relative
+    font-size: 20px
+    color: $text-color
+    line-height: 40px
+    li
+      position: relative
+      padding-left: 20px
+      &::before
+        display: block
+        content: ''
+        position: absolute
+        left: 0
+        top: 40%
+        width: 7px
+        height: 7px
+        background-image: url('../img/ic-bullet.svg')
+        background-repeat: no-repeat
+        background-size: 100%
+
+
+.billing-method__checkbox
+  position: relative
+  display: block
+  margin-bottom: 10px
+  padding-left: 35px
+  font-size: 20px
+  color: $text-color
+  cursor: pointer
+  input
+    position: absolute
+    opacity: 0
+  .checkmark
+    display: block
+    position: absolute
+    left: 0
+    top: 5px
+    width: 20px
+    height: 20px
+    border-radius: 50%
+    background-color: #fff
+    border: 2px solid #8D97A6
+.billing-method__checkbox input:checked ~ .checkmark
+  border-color: $yellow
+  &::after
+    display: block
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 10px
+    height: 10px
+    border-radius: 50%
+    background-color: $yellow
+
+
+.credit-card-icon
+  padding-left: 20px
+
+.input-title
+  color: #193560
+  font-size: 20px
+  line-height: 35px
+  margin-bottom: 10px
+.choose-billing-method
+  .input-title
+    margin-top: 10px
+.credit-card-method-group
+  margin-bottom: 35px
+.main-section .review-order-step 
+  .sign-up-input-field
+    margin: 0 0 15px 0
+.main-section .review-order-step  .credit-card-method-group
+  .sign-up-input-field
+    margin: 10px 0 35px 0
+

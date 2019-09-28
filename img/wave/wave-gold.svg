@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="460px" height="162px" viewBox="0 0 460 162" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Wave</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 549 0 549 209 0 209"></polygon>
+    </defs>
+    <g id="Web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Choose-Membership-V7-Anually-Select" transform="translate(-410.000000, -1071.000000)">
+            <g id="Memberships" transform="translate(90.000000, 336.000000)">
+                <g id="Premium-Plus" transform="translate(320.000000, 0.000000)">
+                    <g id="Wave" transform="translate(0.000000, 688.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path d="M1.12228892,57.1408117 C1.12228892,57.1408117 37.2676341,120.957171 117.897947,106.916109 C198.530354,92.8778605 248.576467,26.5070461 322.720174,53.3119426 C396.863881,80.1140259 436.71526,128.614909 491.394962,100.535599 C546.076757,72.4562878 538.662596,232 538.662596,232 L-10,232 L1.12228892,57.1408117 Z" id="Fill-1" fill="#FBB03A" mask="url(#mask-2)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

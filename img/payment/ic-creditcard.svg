@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="18px" viewBox="0 0 23 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>ic-creditcard</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Review-Order-1-V3---Premium-Plus" transform="translate(-891.000000, -644.000000)" fill="#193560" fill-rule="nonzero">
+            <g id="Group-3" transform="translate(170.000000, 321.000000)">
+                <g id="Credit-Card" transform="translate(478.000000, 319.000000)">
+                    <path d="M263.7,8.5 L245.3,8.5 L245.3,6.25 L263.7,6.25 L263.7,8.5 Z M263.7,19.75 L245.3,19.75 L245.3,13 L263.7,13 L263.7,19.75 Z M263.7,4 L245.3,4 C244.0235,4 243,5.00125 243,6.25 L243,19.75 C243,20.9926407 244.029745,22 245.3,22 L263.7,22 C264.970255,22 266,20.9926407 266,19.75 L266,6.25 C266,5.00125 264.965,4 263.7,4 Z" id="ic-creditcard"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
